@@ -1,0 +1,715 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0b;
+    color: white;
+}
+
+
+/* HEADER */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 22px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8%;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.25),
+            rgba(0,0,0,0.8)
+        ),
+        url("https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=2000&q=90");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-text {
+    max-width: 650px;
+}
+
+.small-title {
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 0.95;
+
+    margin-bottom: 30px;
+}
+
+.hero p {
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.main-button {
+    display: inline-block;
+
+    padding: 16px 28px;
+
+    background: white;
+    color: black;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: #aaa;
+}
+
+
+/* MODELS */
+
+.models {
+    padding: 120px 6%;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title p {
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    margin-top: 12px;
+    font-size: 42px;
+}
+
+
+.model-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+}
+
+.model-card {
+    background: #151515;
+
+    padding-bottom: 25px;
+
+    cursor: pointer;
+
+    transition: 0.35s;
+}
+
+.model-card:hover {
+    transform: translateY(-8px);
+}
+
+.model-card img {
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.model-card h3 {
+    font-size: 24px;
+    margin: 20px 20px 8px;
+}
+
+.model-card p {
+    color: #888;
+    margin: 0 20px 20px;
+}
+
+.model-card button {
+    margin-left: 20px;
+
+    padding: 11px 20px;
+
+    background: transparent;
+
+    border: 1px solid #555;
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+/* CONFIGURATOR */
+
+.configurator {
+    padding: 120px 6%;
+
+    background: #111;
+}
+
+.config-title {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.config-title p:first-child {
+    color: #888;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+}
+
+.config-title h2 {
+    font-size: 55px;
+
+    margin: 12px 0;
+}
+
+
+/* 360 VIEWER */
+
+.viewer {
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: #181818;
+
+    border: 1px solid #292929;
+}
+
+.viewer-top {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 18px 25px;
+
+    color: #999;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.car-stage {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #2b2b2b 0%,
+            #181818 55%,
+            #101010 100%
+        );
+}
+
+
+.car-view {
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: grab;
+
+    user-select: none;
+
+    transition: transform 0.15s ease;
+}
+
+.car-view:active {
+    cursor: grabbing;
+}
+
+.car-view img {
+    width: 100%;
+    max-width: 850px;
+
+    height: 420px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transition:
+        filter 0.4s ease,
+        transform 0.2s ease;
+}
+
+
+/*
+    ВАЖНО:
+    Фон машины НЕ меняется.
+    filter применяется только к изображению автомобиля.
+*/
+
+
+.rotate-button {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.65);
+
+    border: 1px solid #555;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: 0.3s;
+}
+
+.rotate-button:hover {
+    background: white;
+    color: black;
+}
+
+.rotate-button.left {
+    left: 20px;
+}
+
+.rotate-button.right {
+    right: 20px;
+}
+
+
+.viewer-info {
+    padding: 20px;
+
+    text-align: center;
+
+    color: #888;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.angle-dots {
+    display: flex;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+.angle-dots span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #444;
+}
+
+.angle-dots span.active {
+    background: white;
+}
+
+
+/* PRICE */
+
+.price-box {
+    max-width: 1100px;
+
+    margin: 35px auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 30px;
+
+    background: #181818;
+}
+
+.price-box span {
+    color: #888;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.price-box strong {
+    font-size: 32px;
+}
+
+
+/* OPTIONS */
+
+.option-section {
+    max-width: 1100px;
+
+    margin: 35px auto;
+}
+
+.option-section h3 {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.option-section p {
+    color: #888;
+
+    margin-bottom: 18px;
+}
+
+
+/* COLORS */
+
+.color-options {
+    display: flex;
+
+    gap: 14px;
+}
+
+.color {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 3px solid transparent;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.color:hover {
+    transform: scale(1.1);
+}
+
+.color.active {
+    border-color: white;
+}
+
+.color.black {
+    background: #111;
+}
+
+.color.white {
+    background: #eee;
+}
+
+.color.silver {
+    background: #999;
+}
+
+.color.red {
+    background: #9d1010;
+}
+
+.color.blue {
+    background: #173f70;
+}
+
+
+/* OPTIONS */
+
+.wheel-options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.option-button {
+    padding: 15px 20px;
+
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #444;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.option-button:hover,
+.option-button.active {
+    background: white;
+
+    color: black;
+
+    border-color: white;
+}
+
+
+/* REQUEST */
+
+.request-button {
+    display: block;
+
+    max-width: 1100px;
+
+    width: 100%;
+
+    margin: 50px auto 0;
+
+    padding: 20px;
+
+    background: white;
+
+    color: black;
+
+    border: none;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.request-button:hover {
+    background: #aaa;
+}
+
+
+/* CONTACTS */
+
+.contacts {
+    padding: 120px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap: 60px;
+}
+
+.contacts h2 {
+    font-size: 50px;
+
+    margin-top: 15px;
+}
+
+.contacts > div:first-child p {
+    color: #888;
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+}
+
+.contact-info {
+    color: #aaa;
+
+    line-height: 2;
+}
+
+#contactForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    background: #171717;
+
+    border: 1px solid #333;
+
+    color: white;
+
+    outline: none;
+}
+
+#contactForm textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+#contactForm button {
+    padding: 15px;
+
+    background: white;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px 6%;
+
+    border-top: 1px solid #222;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 18px 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 120px 6%;
+    }
+
+    .models,
+    .configurator,
+    .contacts {
+        padding: 80px 5%;
+    }
+
+    .config-title h2 {
+        font-size: 40px;
+    }
+
+    .car-stage {
+        min-height: 350px;
+    }
+
+    .car-view img {
+        height: 300px;
+    }
+
+    .rotate-button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .contacts {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+}
+

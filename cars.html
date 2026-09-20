@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mercedes-Benz | Premium Cars</title>
+
+    <link rel="stylesheet" href="./css/cars.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">MERCEDES-BENZ</div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#models">MODELS</a>
+        <a href="#configurator">CONFIGURATOR</a>
+        <a href="#contacts">CONTACTS</a>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <p class="small-title">NEW ARRIVALS — 2026</p>
+
+        <h1>
+            THE SEDAN<br>
+            THAT SETS<br>
+            THE STANDARD
+        </h1>
+
+        <p>
+            Experience luxury, performance and modern technology.
+        </p>
+
+        <a href="#models" class="main-button">
+            VIEW MODELS
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- MODELS -->
+
+<section class="models" id="models">
+
+    <div class="section-title">
+        <p>OUR COLLECTION</p>
+        <h2>CHOOSE YOUR MERCEDES</h2>
+    </div>
+
+    <div class="model-grid">
+
+        <div class="model-card" onclick="chooseCar('C-Class')">
+            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1200&q=80">
+            <h3>C-Class</h3>
+            <p>Elegant Sedan</p>
+            <button>SELECT</button>
+        </div>
+
+
+        <div class="model-card" onclick="chooseCar('E-Class')">
+            <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=80">
+            <h3>E-Class</h3>
+            <p>Business Sedan</p>
+            <button>SELECT</button>
+        </div>
+
+
+        <div class="model-card" onclick="chooseCar('S-Class')">
+            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80">
+            <h3>S-Class</h3>
+            <p>Luxury Sedan</p>
+            <button>SELECT</button>
+        </div>
+
+
+        <div class="model-card" onclick="chooseCar('G-Class')">
+            <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80">
+            <h3>G-Class</h3>
+            <p>Luxury SUV</p>
+            <button>SELECT</button>
+        </div>
+
+
+        <div class="model-card" onclick="chooseCar('AMG GT')">
+            <img src="https://images.unsplash.com/photo-1618843479619-f3d0e1e2b4f4?auto=format&fit=crop&w=1200&q=80">
+            <h3>AMG GT</h3>
+            <p>Performance Coupe</p>
+            <button>SELECT</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONFIGURATOR -->
+
+<section class="configurator" id="configurator">
+
+    <div class="config-title">
+
+        <p>CONFIGURATOR</p>
+
+        <h2 id="selectedModel">
+            C-Class
+        </h2>
+
+        <p id="selectedType">
+            Premium Sedan
+        </p>
+
+    </div>
+
+
+    <!-- 360 VIEWER -->
+
+    <div class="viewer">
+
+        <div class="viewer-top">
+            <span>360° VIEW</span>
+            <span id="angleText">FRONT</span>
+        </div>
+
+
+        <div class="car-stage">
+
+            <button
+                class="rotate-button left"
+                onclick="rotateCar(-1)">
+                ←
+            </button>
+
+
+            <div
+                class="car-view"
+                id="carView">
+
+                <img
+                    id="carImage"
+                    src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&w=1600&q=90"
+                    alt="Mercedes-Benz">
+
+            </div>
+
+
+            <button
+                class="rotate-button right"
+                onclick="rotateCar(1)">
+                →
+            </button>
+
+        </div>
+
+
+        <div class="viewer-info">
+            <span>DRAG TO ROTATE</span>
+
+            <div class="angle-dots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- PRICE -->
+
+    <div class="price-box">
+
+        <span>STARTING PRICE</span>
+
+        <strong id="price">
+            $55,000
+        </strong>
+
+    </div>
+
+
+    <!-- COLORS -->
+
+    <div class="option-section">
+
+        <h3>EXTERIOR COLOR</h3>
+
+        <p>
+            Selected:
+            <strong id="colorName">
+                Obsidian Black
+            </strong>
+        </p>
+
+
+        <div class="color-options">
+
+            <button
+                class="color black active"
+                onclick="changeColor('black', this)"
+                aria-label="Black">
+            </button>
+
+            <button
+                class="color white"
+                onclick="changeColor('white', this)"
+                aria-label="White">
+            </button>
+
+            <button
+                class="color silver"
+                onclick="changeColor('silver', this)"
+                aria-label="Silver">
+            </button>
+
+            <button
+                class="color red"
+                onclick="changeColor('red', this)"
+                aria-label="Red">
+            </button>
+
+            <button
+                class="color blue"
+                onclick="changeColor('blue', this)"
+                aria-label="Blue">
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- WHEELS -->
+
+    <div class="option-section">
+
+        <h3>WHEELS</h3>
+
+        <div class="wheel-options">
+
+            <button
+                class="option-button active"
+                onclick="selectWheel(0, this)">
+                19" FIVE-SPOKE
+            </button>
+
+            <button
+                class="option-button"
+                onclick="selectWheel(1500, this)">
+                20" MULTI-SPOKE +$1,500
+            </button>
+
+            <button
+                class="option-button"
+                onclick="selectWheel(3000, this)">
+                21" TWIN-SPOKE +$3,000
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- INTERIOR -->
+
+    <div class="option-section">
+
+        <h3>INTERIOR</h3>
+
+        <div class="wheel-options">
+
+            <button
+                class="option-button active"
+                onclick="selectInterior(0, this)">
+                BLACK LEATHER
+            </button>
+
+            <button
+                class="option-button"
+                onclick="selectInterior(2500, this)">
+                MACCHIATO BEIGE +$2,500
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="request-button"
+        onclick="requestCar()">
+
+        REQUEST THIS BUILD
+
+    </button>
+
+</section>
+
+
+<!-- CONTACTS -->
+
+<section class="contacts" id="contacts">
+
+    <div>
+
+        <p>CONTACTS</p>
+
+        <h2>VISIT OUR<br>SHOWROOM</h2>
+
+    </div>
+
+
+    <div class="contact-info">
+
+        <p>
+            Tashkent, Uzbekistan
+        </p>
+
+        <p>
+            +998 90 000 00 00
+        </p>
+
+        <p>
+            info@mercedes-demo.com
+        </p>
+
+        <p>
+            Mon–Sat: 09:00–20:00
+        </p>
+
+    </div>
+
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            placeholder="Your name"
+            required>
+
+        <input
+            type="email"
+            placeholder="Your email"
+            required>
+
+        <textarea
+            placeholder="Your message"
+            required></textarea>
+
+        <button type="submit">
+            SEND MESSAGE
+        </button>
+
+    </form>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Mercedes-Benz Practice Website
+    </p>
+
+    <p>
+        Practice layout — not an official Mercedes-Benz site.
+    </p>
+
+</footer>
+
+
+<script src="./js/cars.js"></script>
+
+</body>
+</html>
+
