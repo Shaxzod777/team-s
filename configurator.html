@@ -1,1 +1,127 @@
-<!-- vedv -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz — Configurator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- общие стили: шапка, подвал, кнопки -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/configurator.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="./index.html" class="logo">LOGO</a>
+
+            <nav class="nav" id="nav">
+                <a href="./index.html" class="nav__link">Home</a>
+                <a href="./cars.html" class="nav__link">Model</a>
+                <a href="./configurator.html" class="nav__link nav__link--active">Configurator</a>
+                <a href="./contacts.html" class="nav__link">Contacts</a>
+            </nav>
+
+            <a href="./contacts.html" class="btn btn--outline btn--small header__cta">Test drive</a>
+
+            <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="config">
+        <div class="container">
+            <p class="eyebrow">Step 1 of 3 — Exterior</p>
+            <h1 class="config__title">Build your [MODEL NAME]</h1>
+            <p class="config__text">
+                Pick a paint, wheels and an interior. The picture block updates when you replace it with your own renders.
+            </p>
+
+            <div class="config__inner">
+                <div class="placeholder config__render" id="render">Car render — 800 × 520</div>
+
+                <div class="config__panel">
+                    <!-- PAINT -->
+                    <div class="option" data-group="paint">
+                        <p class="option__label">Paint</p>
+                        <div class="swatches">
+                            <button class="swatch swatch--active" style="--color: #15171c" data-name="Obsidian black" data-price="0" aria-label="Obsidian black"></button>
+                            <button class="swatch" style="--color: #c9ccd3" data-name="Iridium silver" data-price="1200" aria-label="Iridium silver"></button>
+                            <button class="swatch" style="--color: #7b8088" data-name="Selenite grey" data-price="1200" aria-label="Selenite grey"></button>
+                            <button class="swatch" style="--color: #efefe8" data-name="Polar white" data-price="0" aria-label="Polar white"></button>
+                        </div>
+                        <p class="option__value" id="paintName">Obsidian black</p>
+                    </div>
+
+                    <!-- WHEELS -->
+                    <div class="option" data-group="wheels">
+                        <p class="option__label">Wheels</p>
+                        <div class="choices">
+                            <button class="choice choice--active" data-name='19" five-spoke' data-price="0">19" five-spoke</button>
+                            <button class="choice" data-name='20" multi-spoke' data-price="1500">20" multi-spoke</button>
+                            <button class="choice" data-name='21" twin-spoke' data-price="2800">21" twin-spoke</button>
+                        </div>
+                    </div>
+
+                    <!-- INTERIOR -->
+                    <div class="option" data-group="interior">
+                        <p class="option__label">Interior</p>
+                        <div class="choices">
+                            <button class="choice choice--active" data-name="Black leather" data-price="0">Black leather</button>
+                            <button class="choice" data-name="Macchiato beige" data-price="900">Macchiato beige</button>
+                        </div>
+                    </div>
+
+                    <!-- TOTAL -->
+                    <div class="total">
+                        <p class="total__price" id="totalPrice">$95,000</p>
+                        <p class="total__summary" id="summary">Obsidian black · 19" five-spoke · Black leather</p>
+                    </div>
+
+                    <button class="btn btn--light" id="requestBtn">Request this build</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <p class="footer__logo">Mercedes-Benz</p>
+                    <p class="footer__address">[DEALER NAME], [STREET ADDRESS], [CITY]</p>
+                </div>
+
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <p class="footer__heading">Pages</p>
+                        <a href="./index.html">Home</a>
+                        <a href="./cars.html">Model</a>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__heading">Buy</p>
+                        <a href="./configurator.html">Configurator</a>
+                        <a href="./contacts.html">Test drive</a>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__heading">Contact</p>
+                        <a href="tel:+0000000000">[PHONE]</a>
+                        <a href="mailto:info@example.com">[EMAIL]</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__copy">© <span id="year">[YEAR]</span> [DEALER NAME]. Practice layout — not an official site.</p>
+        </div>
+    </footer>
+
+    <!-- общий скрипт: меню, шапка, год -->
+    <script src="./js/index.js"></script>
+    <script src="./js/configurator.js"></script>
+</body>
+</html>

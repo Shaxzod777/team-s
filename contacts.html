@@ -1,1 +1,133 @@
-<!-- vdvo -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercedes-Benz — Contacts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- общие стили: шапка, подвал, кнопки -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/contacts.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
+            <a href="./index.html" class="logo">LOGO</a>
+
+            <nav class="nav" id="nav">
+                <a href="./index.html" class="nav__link">Home</a>
+                <a href="./cars.html" class="nav__link">Model</a>
+                <a href="./configurator.html" class="nav__link">Configurator</a>
+                <a href="./contacts.html" class="nav__link nav__link--active">Contacts</a>
+            </nav>
+
+            <a href="./contacts.html" class="btn btn--outline btn--small header__cta">Test drive</a>
+
+            <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="contacts">
+        <div class="container">
+            <p class="eyebrow">Contacts</p>
+            <h1 class="contacts__title">Come and drive it</h1>
+            <p class="contacts__text">
+                Showroom open [OPENING HOURS]. Leave your number and we call back the same day.
+            </p>
+
+            <div class="contacts__inner">
+                <!-- INFO -->
+                <div class="info">
+                    <div class="info__item">
+                        <p class="info__label">Address</p>
+                        <p class="info__value">[STREET ADDRESS]<br>[CITY], [COUNTRY]</p>
+                    </div>
+                    <div class="info__item">
+                        <p class="info__label">Phone</p>
+                        <a href="tel:+0000000000" class="info__value">[PHONE]</a>
+                    </div>
+                    <div class="info__item">
+                        <p class="info__label">Email</p>
+                        <a href="mailto:info@example.com" class="info__value">[EMAIL]</a>
+                    </div>
+                    <div class="info__item">
+                        <p class="info__label">Hours</p>
+                        <p class="info__value">[OPENING HOURS]</p>
+                    </div>
+                </div>
+
+                <!-- FORM -->
+                <form class="form" id="testDriveForm" novalidate>
+                    <h2 class="form__title">Book a test drive</h2>
+
+                    <div class="form__field">
+                        <label class="form__label" for="name">Name</label>
+                        <input class="form__input" type="text" id="name" name="name" placeholder="Your name" required minlength="2">
+                        <p class="form__error"></p>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label" for="phone">Phone</label>
+                        <input class="form__input" type="tel" id="phone" name="phone" placeholder="+[COUNTRY CODE] ..." required pattern="^\+?[0-9\s\-()]{7,20}$">
+                        <p class="form__error"></p>
+                    </div>
+
+                    <div class="form__field">
+                        <label class="form__label" for="message">Message</label>
+                        <textarea class="form__input form__textarea" id="message" name="message" placeholder="Which model and when suits you?"></textarea>
+                        <p class="form__error"></p>
+                    </div>
+
+                    <button type="submit" class="btn btn--light form__submit">Send request</button>
+                    <p class="form__success" id="formSuccess">Thank you! We will call you back today.</p>
+                </form>
+            </div>
+
+            <!-- MAP: замените блок на iframe из конструктора Яндекс.Карт (yandex.ru/map-constructor) -->
+            <div class="placeholder map">Yandex maps</div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <p class="footer__logo">Mercedes-Benz</p>
+                    <p class="footer__address">[DEALER NAME], [STREET ADDRESS], [CITY]</p>
+                </div>
+
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <p class="footer__heading">Pages</p>
+                        <a href="./index.html">Home</a>
+                        <a href="./cars.html">Model</a>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__heading">Buy</p>
+                        <a href="./configurator.html">Configurator</a>
+                        <a href="./contacts.html">Test drive</a>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__heading">Contact</p>
+                        <a href="tel:+0000000000">[PHONE]</a>
+                        <a href="mailto:info@example.com">[EMAIL]</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer__copy">© <span id="year">[YEAR]</span> [DEALER NAME]. Practice layout — not an official site.</p>
+        </div>
+    </footer>
+
+    <!-- общий скрипт: меню, шапка, год -->
+    <script src="./js/index.js"></script>
+    <script src="./js/contacts.js"></script>
+</body>
+</html>

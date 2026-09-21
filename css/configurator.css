@@ -1,1 +1,154 @@
-/* didd */
+/* ===== CONFIGURATOR PAGE ===== */
+.config {
+    padding: 48px 0 120px;
+}
+
+.config__title {
+    font-family: var(--font-title);
+    font-weight: 400;
+    font-size: 72px;
+    line-height: 1;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.config__text {
+    font-size: 17px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.config__inner {
+    display: grid;
+    grid-template-columns: 800fr 464fr;
+    gap: 36px;
+    align-items: start;
+}
+
+.config__render {
+    aspect-ratio: 800 / 520;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.4s;
+}
+
+/* цветное пятно выбранной краски внутри рендера */
+.config__render::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 18%;
+    width: 60%;
+    height: 22%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: var(--paint, #15171c);
+    filter: blur(40px);
+    opacity: 0.35;
+    transition: background 0.4s;
+}
+
+/* ===== OPTIONS ===== */
+.option {
+    margin-bottom: 32px;
+}
+
+.option__label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+}
+
+.option__value {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.swatches {
+    display: flex;
+    gap: 12px;
+}
+
+.swatch {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color);
+    outline: 1px solid transparent;
+    outline-offset: 3px;
+    transition: outline-color 0.2s, transform 0.2s;
+}
+
+.swatch:hover {
+    transform: scale(1.08);
+}
+
+.swatch--active {
+    outline-color: var(--text);
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.choice {
+    min-width: 100px;
+    padding: 8px 18px;
+    border: 1px solid #4a4b4f;
+    font-size: 12px;
+    line-height: 1.4;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.choice:hover {
+    border-color: var(--text);
+}
+
+.choice--active {
+    background: var(--text);
+    border-color: var(--text);
+    color: var(--bg);
+}
+
+/* ===== TOTAL ===== */
+.total {
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    margin-bottom: 28px;
+}
+
+.total__price {
+    font-family: var(--font-title);
+    font-size: 36px;
+    line-height: 1.1;
+}
+
+.total__summary {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .config__inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .config {
+        padding: 32px 0 80px;
+    }
+
+    .config__title {
+        font-size: 44px;
+    }
+
+    .config__panel .btn {
+        width: 100%;
+    }
+}
