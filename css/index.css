@@ -87,6 +87,15 @@ button {
     text-align: center;
 }
 
+.photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
 /* ===== BUTTONS ===== */
 .btn {
     display: inline-flex;

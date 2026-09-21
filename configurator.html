@@ -35,54 +35,96 @@
 
     <main class="config">
         <div class="container">
-            <p class="eyebrow">Step 1 of 3 — Exterior</p>
-            <h1 class="config__title">Build your [MODEL NAME]</h1>
+            <p class="eyebrow" id="stepLabel">Step 1 of 3 — Exterior</p>
+            <h1 class="config__title">Build your E-Class</h1>
             <p class="config__text">
-                Pick a paint, wheels and an interior. The picture block updates when you replace it with your own renders.
+                Pick a paint, wheels and an interior, then add the packages you want. The price updates as you go.
             </p>
 
             <div class="config__inner">
-                <div class="placeholder config__render" id="render">Car render — 800 × 520</div>
+                <img class="photo config__render" id="render" src="https://images.unsplash.com/photo-1616932312541-3dbdd74f6c50?auto=format&fit=crop&w=1600&q=80" alt="Mercedes-Benz E-Class in Obsidian black">
 
                 <div class="config__panel">
-                    <!-- PAINT -->
-                    <div class="option" data-group="paint">
-                        <p class="option__label">Paint</p>
-                        <div class="swatches">
-                            <button class="swatch swatch--active" style="--color: #15171c" data-name="Obsidian black" data-price="0" aria-label="Obsidian black"></button>
-                            <button class="swatch" style="--color: #c9ccd3" data-name="Iridium silver" data-price="1200" aria-label="Iridium silver"></button>
-                            <button class="swatch" style="--color: #7b8088" data-name="Selenite grey" data-price="1200" aria-label="Selenite grey"></button>
-                            <button class="swatch" style="--color: #efefe8" data-name="Polar white" data-price="0" aria-label="Polar white"></button>
+                    <!-- STEP 1: EXTERIOR -->
+                    <div class="step step--active" data-step="1" data-title="Exterior">
+                        <div class="option" data-group="paint">
+                            <p class="option__label">Paint</p>
+                            <div class="swatches">
+                                <button class="swatch swatch--active" style="--color: #15171c" data-name="Obsidian black" data-price="0" data-image="https://images.unsplash.com/photo-1616932312541-3dbdd74f6c50?auto=format&fit=crop&w=1600&q=80" aria-label="Obsidian black"></button>
+                                <button class="swatch" style="--color: #c9ccd3" data-name="Iridium silver" data-price="1200" data-image="https://images.unsplash.com/photo-1551836989-b4622a17a792?auto=format&fit=crop&w=1600&q=80" aria-label="Iridium silver"></button>
+                                <button class="swatch" style="--color: #7b8088" data-name="Selenite grey" data-price="1200" data-image="https://images.unsplash.com/photo-1609703048009-d3576872b32c?auto=format&fit=crop&w=1600&q=80" aria-label="Selenite grey"></button>
+                                <button class="swatch" style="--color: #efefe8" data-name="Polar white" data-price="0" data-image="https://images.unsplash.com/photo-1605556816125-d752c226247b?auto=format&fit=crop&w=1600&q=80" aria-label="Polar white"></button>
+                            </div>
+                            <p class="option__value" id="paintName">Obsidian black</p>
                         </div>
-                        <p class="option__value" id="paintName">Obsidian black</p>
+
+                        <div class="option" data-group="wheels">
+                            <p class="option__label">Wheels</p>
+                            <div class="choices">
+                                <button class="choice choice--active" data-name='19" five-spoke' data-price="0">19" five-spoke</button>
+                                <button class="choice" data-name='20" multi-spoke' data-price="1500">20" multi-spoke</button>
+                                <button class="choice" data-name='21" twin-spoke' data-price="2800">21" twin-spoke</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- WHEELS -->
-                    <div class="option" data-group="wheels">
-                        <p class="option__label">Wheels</p>
-                        <div class="choices">
-                            <button class="choice choice--active" data-name='19" five-spoke' data-price="0">19" five-spoke</button>
-                            <button class="choice" data-name='20" multi-spoke' data-price="1500">20" multi-spoke</button>
-                            <button class="choice" data-name='21" twin-spoke' data-price="2800">21" twin-spoke</button>
+                    <!-- STEP 2: INTERIOR -->
+                    <div class="step" data-step="2" data-title="Interior">
+                        <div class="option" data-group="interior">
+                            <p class="option__label">Upholstery</p>
+                            <div class="choices">
+                                <button class="choice choice--active" data-name="Black leather" data-price="0" data-image="https://images.unsplash.com/photo-1652453822981-653a9a522a5b?auto=format&fit=crop&w=1600&q=80">Black leather</button>
+                                <button class="choice" data-name="Macchiato beige" data-price="900" data-image="https://images.unsplash.com/photo-1652453456448-d2bba6580587?auto=format&fit=crop&w=1600&q=80">Macchiato beige</button>
+                            </div>
+                        </div>
+
+                        <div class="option" data-group="trim">
+                            <p class="option__label">Trim</p>
+                            <div class="choices">
+                                <button class="choice choice--active" data-name="Black ash wood" data-price="0">Black ash wood</button>
+                                <button class="choice" data-name="Brushed aluminium" data-price="450">Brushed aluminium</button>
+                                <button class="choice" data-name="Carbon fibre" data-price="1100">Carbon fibre</button>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- INTERIOR -->
-                    <div class="option" data-group="interior">
-                        <p class="option__label">Interior</p>
-                        <div class="choices">
-                            <button class="choice choice--active" data-name="Black leather" data-price="0">Black leather</button>
-                            <button class="choice" data-name="Macchiato beige" data-price="900">Macchiato beige</button>
+                    <!-- STEP 3: PACKAGES (можно выбрать несколько) -->
+                    <div class="step" data-step="3" data-title="Packages">
+                        <div class="option" data-group="packages">
+                            <p class="option__label">Packages</p>
+                            <label class="package">
+                                <input type="checkbox" data-name="Driver Assistance" data-price="2250">
+                                <span class="package__name">Driver Assistance</span>
+                                <span class="package__price">+$2,250</span>
+                            </label>
+                            <label class="package">
+                                <input type="checkbox" data-name="Burmester sound" data-price="1150">
+                                <span class="package__name">Burmester® surround sound</span>
+                                <span class="package__price">+$1,150</span>
+                            </label>
+                            <label class="package">
+                                <input type="checkbox" data-name="AMG Line" data-price="3100">
+                                <span class="package__name">AMG Line exterior</span>
+                                <span class="package__price">+$3,100</span>
+                            </label>
+                            <label class="package">
+                                <input type="checkbox" data-name="Panoramic roof" data-price="1500">
+                                <span class="package__name">Panoramic sunroof</span>
+                                <span class="package__price">+$1,500</span>
+                            </label>
                         </div>
                     </div>
 
                     <!-- TOTAL -->
                     <div class="total">
-                        <p class="total__price" id="totalPrice">$95,000</p>
+                        <p class="total__price" id="totalPrice">$62,650</p>
                         <p class="total__summary" id="summary">Obsidian black · 19" five-spoke · Black leather</p>
                     </div>
 
-                    <button class="btn btn--light" id="requestBtn">Request this build</button>
+                    <div class="config__nav">
+                        <button class="btn btn--outline" id="backBtn" hidden>Back</button>
+                        <button class="btn btn--light" id="nextBtn">Next: Interior</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,7 +136,7 @@
             <div class="footer__top">
                 <div class="footer__brand">
                     <p class="footer__logo">Mercedes-Benz</p>
-                    <p class="footer__address">[DEALER NAME], [STREET ADDRESS], [CITY]</p>
+                    <p class="footer__address">Star Motors, 108 Amir Temur Avenue, Tashkent</p>
                 </div>
 
                 <div class="footer__cols">
@@ -110,13 +152,13 @@
                     </div>
                     <div class="footer__col">
                         <p class="footer__heading">Contact</p>
-                        <a href="tel:+0000000000">[PHONE]</a>
-                        <a href="mailto:info@example.com">[EMAIL]</a>
+                        <a href="tel:+998712000000">+998 71 200 00 00</a>
+                        <a href="mailto:info@starmotors.uz">info@starmotors.uz</a>
                     </div>
                 </div>
             </div>
 
-            <p class="footer__copy">© <span id="year">[YEAR]</span> [DEALER NAME]. Practice layout — not an official site.</p>
+            <p class="footer__copy">© <span id="year">2026</span> Star Motors. Practice layout — not an official site.</p>
         </div>
     </footer>
 

@@ -38,7 +38,7 @@
             <p class="eyebrow">Contacts</p>
             <h1 class="contacts__title">Come and drive it</h1>
             <p class="contacts__text">
-                Showroom open [OPENING HOURS]. Leave your number and we call back the same day.
+                Showroom open Mon–Sat, 9:00–20:00. Leave your number and we call back the same day.
             </p>
 
             <div class="contacts__inner">
@@ -46,19 +46,19 @@
                 <div class="info">
                     <div class="info__item">
                         <p class="info__label">Address</p>
-                        <p class="info__value">[STREET ADDRESS]<br>[CITY], [COUNTRY]</p>
+                        <p class="info__value">108 Amir Temur Avenue<br>Tashkent, Uzbekistan</p>
                     </div>
                     <div class="info__item">
                         <p class="info__label">Phone</p>
-                        <a href="tel:+0000000000" class="info__value">[PHONE]</a>
+                        <a href="tel:+998712000000" class="info__value">+998 71 200 00 00</a>
                     </div>
                     <div class="info__item">
                         <p class="info__label">Email</p>
-                        <a href="mailto:info@example.com" class="info__value">[EMAIL]</a>
+                        <a href="mailto:info@starmotors.uz" class="info__value">info@starmotors.uz</a>
                     </div>
                     <div class="info__item">
                         <p class="info__label">Hours</p>
-                        <p class="info__value">[OPENING HOURS]</p>
+                        <p class="info__value">Mon–Sat, 9:00–20:00<br>Sunday closed</p>
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
 
                     <div class="form__field">
                         <label class="form__label" for="phone">Phone</label>
-                        <input class="form__input" type="tel" id="phone" name="phone" placeholder="+[COUNTRY CODE] ..." required pattern="^\+?[0-9\s\-()]{7,20}$">
+                        <input class="form__input" type="tel" id="phone" name="phone" placeholder="+998 90 123 45 67" required pattern="^\+?[0-9\s\-()]{7,20}$">
                         <p class="form__error"></p>
                     </div>
 
@@ -89,8 +89,10 @@
                 </form>
             </div>
 
-            <!-- MAP: замените блок на iframe из конструктора Яндекс.Карт (yandex.ru/map-constructor) -->
-            <div class="placeholder map">Yandex maps</div>
+            <!-- MAP: координаты меняются в параметрах ll и pt -->
+            <div class="map">
+                <iframe src="https://yandex.uz/map-widget/v1/?ll=69.279737%2C41.311151&z=15&pt=69.279737%2C41.311151%2Cpm2rdm" title="Star Motors on the map" loading="lazy" allowfullscreen></iframe>
+            </div>
         </div>
     </main>
 
@@ -100,7 +102,7 @@
             <div class="footer__top">
                 <div class="footer__brand">
                     <p class="footer__logo">Mercedes-Benz</p>
-                    <p class="footer__address">[DEALER NAME], [STREET ADDRESS], [CITY]</p>
+                    <p class="footer__address">Star Motors, 108 Amir Temur Avenue, Tashkent</p>
                 </div>
 
                 <div class="footer__cols">
@@ -116,13 +118,13 @@
                     </div>
                     <div class="footer__col">
                         <p class="footer__heading">Contact</p>
-                        <a href="tel:+0000000000">[PHONE]</a>
-                        <a href="mailto:info@example.com">[EMAIL]</a>
+                        <a href="tel:+998712000000">+998 71 200 00 00</a>
+                        <a href="mailto:info@starmotors.uz">info@starmotors.uz</a>
                     </div>
                 </div>
             </div>
 
-            <p class="footer__copy">© <span id="year">[YEAR]</span> [DEALER NAME]. Practice layout — not an official site.</p>
+            <p class="footer__copy">© <span id="year">2026</span> Star Motors. Practice layout — not an official site.</p>
         </div>
     </footer>
 

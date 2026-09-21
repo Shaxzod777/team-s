@@ -81,14 +81,19 @@
 }
 
 .gallery__item {
-    aspect-ratio: 415 / 320;
+    display: block;
     width: 100%;
-    font-family: var(--font-body);
+    overflow: hidden;
     cursor: zoom-in;
-    transition: border-color 0.25s;
 }
 
-.gallery__item:hover {
+.gallery__item .photo {
+    aspect-ratio: 415 / 320;
+    transition: transform 0.5s, border-color 0.25s;
+}
+
+.gallery__item:hover .photo {
+    transform: scale(1.04);
     border-color: #4a4b4f;
 }
 
@@ -114,9 +119,12 @@
 }
 
 .lightbox__image {
-    width: min(1000px, 100%);
-    aspect-ratio: 415 / 320;
-    font-size: 13px;
+    flex: 0 1 1100px;
+    min-width: 0;
+    max-height: 85vh;
+    object-fit: contain;
+    border: none;
+    background: none;
 }
 
 .lightbox__close {

@@ -10,8 +10,9 @@ let current = 0;
 function show(index) {
     // по кругу: после последней снова первая
     current = (index + items.length) % items.length;
-    // когда появятся фото — здесь можно подставлять <img>
-    lightboxImage.textContent = items[current].textContent;
+    const img = items[current].querySelector("img");
+    lightboxImage.src = img.dataset.full;
+    lightboxImage.alt = img.alt;
 }
 
 function open(index) {

@@ -27,25 +27,71 @@
 
 .config__render {
     aspect-ratio: 800 / 520;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.4s;
+    transition: opacity 0.3s;
 }
 
-/* цветное пятно выбранной краски внутри рендера */
-.config__render::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 18%;
-    width: 60%;
-    height: 22%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: var(--paint, #15171c);
-    filter: blur(40px);
-    opacity: 0.35;
-    transition: background 0.4s;
+.config__render--loading {
+    opacity: 0.4;
+}
+
+/* ===== STEPS ===== */
+.step {
+    display: none;
+}
+
+.step--active {
+    display: block;
+    animation: stepIn 0.3s ease;
+}
+
+@keyframes stepIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+.config__nav {
+    display: flex;
+    gap: 12px;
+}
+
+.config__nav [hidden] {
+    display: none;
+}
+
+/* ===== PACKAGES ===== */
+.package {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.package:hover,
+.package:has(input:checked) {
+    border-color: var(--text);
+}
+
+.package input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--text);
+    cursor: pointer;
+}
+
+.package__name {
+    flex: 1;
+}
+
+.package__price {
+    font-size: 13px;
+    color: var(--text-muted);
 }
 
 /* ===== OPTIONS ===== */
@@ -148,7 +194,7 @@
         font-size: 44px;
     }
 
-    .config__panel .btn {
-        width: 100%;
+    .config__nav .btn {
+        flex: 1;
     }
 }
