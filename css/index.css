@@ -730,9 +730,60 @@ button {
     }
 }
 
+/* ===== HERO ZOOM ===== */
+/* рамка у обёртки, чтобы при увеличении фото она не уезжала */
+.hero__media {
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.hero__media .hero__image {
+    border: 0;
+    transform-origin: 50% 60%;
+    animation: heroZoom 12s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+}
+
+@keyframes heroZoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.08);
+    }
+}
+
+/* ===== REVEAL ON SCROLL ===== */
+/* класс .reveal ставит js/index.js — без JS всё просто видно сразу */
+.reveal {
+    opacity: 0;
+}
+
+.reveal--visible {
+    animation: revealUp 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes revealUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
+    }
+
+    .hero__media .hero__image {
+        animation: none;
+    }
+
+    .reveal {
+        opacity: 1;
     }
 
     *,

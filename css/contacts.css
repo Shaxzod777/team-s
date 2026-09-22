@@ -137,10 +137,18 @@ a.info__value:hover {
     aspect-ratio: 1312 / 420;
 }
 
+.map {
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+/* делаем светлую Яндекс.Карту тёмной: инвертируем яркость, но возвращаем исходные оттенки */
 .map iframe {
     width: 100%;
     height: 100%;
     border: 0;
+    filter: invert(0.9) hue-rotate(180deg) saturate(0.6) brightness(0.95);
 }
 
 /* ===== RESPONSIVE ===== */
