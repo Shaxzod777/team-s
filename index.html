@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Mercedes-Benz — Home</title>
+
+    <link rel="icon" href="./favicon.ico" sizes="any">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500&family=Manrope:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
 
     <!-- HEADER -->
     <header class="header">
         <div class="container header__inner">
-            <a href="./index.html" class="logo">LOGO</a>
+
+            <a href="./index.html" class="logo" aria-label="Home">
+                LOGO
+            </a>
 
             <nav class="nav" id="nav">
                 <a href="./index.html" class="nav__link nav__link--active">Home</a>
@@ -24,66 +37,141 @@
                 <a href="./contacts.html" class="nav__link">Contacts</a>
             </nav>
 
-            <a href="./contacts.html" class="btn btn--outline btn--small header__cta">Test drive</a>
+            <a href="./contacts.html" class="btn btn--outline btn--small header__cta">
+                Test drive
+            </a>
 
-            <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-                <span></span><span></span>
+            <button
+                class="burger"
+                id="burger"
+                aria-label="Open menu"
+                aria-expanded="false"
+                type="button"
+            >
+                <span></span>
+                <span></span>
             </button>
+
         </div>
     </header>
 
     <main>
+
         <!-- HERO -->
         <section class="hero">
             <div class="container">
+
                 <p class="eyebrow">New arrivals — 2026</p>
-                <h1 class="hero__title">The sedan that sets the standard</h1>
+
+                <h1 class="hero__title">
+                    The sedan that sets the standard
+                </h1>
+
                 <p class="hero__text">
                     Explore the current line-up, build your own specification and book a test
                     drive at Star Motors in Tashkent.
                 </p>
+
                 <div class="hero__buttons">
-                    <a href="./configurator.html" class="btn btn--light">Build your own</a>
-                    <a href="./cars.html" class="btn btn--outline">View the model</a>
+                    <a href="./configurator.html" class="btn btn--light">
+                        Build your own
+                    </a>
+
+                    <a href="./cars.html" class="btn btn--outline">
+                        View the model
+                    </a>
                 </div>
 
-                <img class="photo hero__image" src="https://images.unsplash.com/photo-1609703048009-d3576872b32c?auto=format&fit=crop&w=2000&q=80" alt="Grey Mercedes-Benz E-Class sedan in a parking garage">
+                <img
+                    class="photo hero__image"
+                    src="https://images.unsplash.com/photo-1609703048009-d3576872b32c?auto=format&fit=crop&w=2000&q=80"
+                    alt="Grey Mercedes-Benz E-Class sedan in a parking garage"
+                >
+
             </div>
         </section>
 
         <!-- LINE-UP -->
         <section class="lineup">
             <div class="container">
+
                 <p class="eyebrow">01 — Line-up</p>
-                <h2 class="section-title">Three ways to drive</h2>
+
+                <h2 class="section-title">
+                    Three ways to drive
+                </h2>
 
                 <div class="cards">
+
                     <article class="card">
-                        <img class="photo card__image" src="https://images.unsplash.com/photo-1616932312541-3dbdd74f6c50?auto=format&fit=crop&w=900&q=80" alt="Black Mercedes-Benz sedan" loading="lazy">
+                        <img
+                            class="photo card__image"
+                            src="https://images.unsplash.com/photo-1616932312541-3dbdd74f6c50?auto=format&fit=crop&w=900&q=80"
+                            alt="Black Mercedes-Benz sedan"
+                            loading="lazy"
+                        >
+
                         <div class="card__body">
-                            <h3 class="card__title">E-Class Sedan</h3>
-                            <p class="card__price">From $62,650</p>
-                            <a href="./cars.html" class="card__link">View model <span>→</span></a>
+                            <h3 class="card__title">
+                                E-Class Sedan
+                            </h3>
+
+                            <p class="card__price">
+                                From $62,650
+                            </p>
+
+                            <a href="./cars.html" class="card__link">
+                                View model <span>→</span>
+                            </a>
                         </div>
                     </article>
 
                     <article class="card">
-                        <img class="photo card__image" src="https://images.unsplash.com/photo-1732347700505-e1231e0f7c94?auto=format&fit=crop&w=900&q=80" alt="Front of a Mercedes-Benz GLE SUV" loading="lazy">
+                        <img
+                            class="photo card__image"
+                            src="https://images.unsplash.com/photo-1732347700505-e1231e0f7c94?auto=format&fit=crop&w=900&q=80"
+                            alt="Front of a Mercedes-Benz GLE SUV"
+                            loading="lazy"
+                        >
+
                         <div class="card__body">
-                            <h3 class="card__title">GLE SUV</h3>
-                            <p class="card__price">From $62,250</p>
-                            <a href="./cars.html" class="card__link">View model <span>→</span></a>
+                            <h3 class="card__title">
+                                GLE SUV
+                            </h3>
+
+                            <p class="card__price">
+                                From $62,250
+                            </p>
+
+                            <a href="./cars.html" class="card__link">
+                                View model <span>→</span>
+                            </a>
                         </div>
                     </article>
 
                     <article class="card">
-                        <img class="photo card__image" src="https://images.unsplash.com/photo-1624085568108-36410cfe4d24?auto=format&fit=crop&w=900&q=80" alt="Silver Mercedes-Benz coupé on a road at night" loading="lazy">
+                        <img
+                            class="photo card__image"
+                            src="https://images.unsplash.com/photo-1624085568108-36410cfe4d24?auto=format&fit=crop&w=900&q=80"
+                            alt="Silver Mercedes-Benz coupé on a road at night"
+                            loading="lazy"
+                        >
+
                         <div class="card__body">
-                            <h3 class="card__title">CLE Coupé</h3>
-                            <p class="card__price">From $57,650</p>
-                            <a href="./cars.html" class="card__link">View model <span>→</span></a>
+                            <h3 class="card__title">
+                                CLE Coupé
+                            </h3>
+
+                            <p class="card__price">
+                                From $57,650
+                            </p>
+
+                            <a href="./cars.html" class="card__link">
+                                View model <span>→</span>
+                            </a>
                         </div>
                     </article>
+
                 </div>
             </div>
         </section>
@@ -91,60 +179,107 @@
         <!-- SHOWROOM -->
         <section class="showroom">
             <div class="container showroom__inner">
-                <img class="photo showroom__image" src="https://images.unsplash.com/photo-1545276133-d91bcba0803c?auto=format&fit=crop&w=1300&q=80" alt="White car in a bright showroom" loading="lazy">
+
+                <img
+                    class="photo showroom__image"
+                    src="https://images.unsplash.com/photo-1545276133-d91bcba0803c?auto=format&fit=crop&w=1300&q=80"
+                    alt="White car in a bright showroom"
+                    loading="lazy"
+                >
 
                 <div class="showroom__content">
+
                     <p class="eyebrow">02 — Showroom</p>
-                    <h2 class="section-title">Visit us in Tashkent</h2>
+
+                    <h2 class="section-title">
+                        Visit us in Tashkent
+                    </h2>
+
                     <p class="showroom__text">
-                        Every car on the floor is prepared by factory-trained technicians. Come and
-                        see it, or reserve a slot for the weekend.
+                        Every car on the floor is prepared by factory-trained technicians.
+                        Come and see it, or reserve a slot for the weekend.
                     </p>
 
                     <ol class="features">
-                        <li><span>01</span> Factory-trained service, 12 bays</li>
-                        <li><span>02</span> Warranty on every certified car</li>
-                        <li><span>03</span> Trade-in valuation in 30 minutes</li>
+                        <li>
+                            <span>01</span>
+                            Factory-trained service, 12 bays
+                        </li>
+
+                        <li>
+                            <span>02</span>
+                            Warranty on every certified car
+                        </li>
+
+                        <li>
+                            <span>03</span>
+                            Trade-in valuation in 30 minutes
+                        </li>
                     </ol>
 
-                    <a href="./contacts.html" class="btn btn--outline">Book a test drive</a>
+                    <a href="./contacts.html" class="btn btn--outline">
+                        Book a test drive
+                    </a>
+
                 </div>
             </div>
         </section>
+
     </main>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
+
             <div class="footer__top">
+
                 <div class="footer__brand">
-                    <p class="footer__logo">Mercedes-Benz</p>
-                    <p class="footer__address">Star Motors, 108 Amir Temur Avenue, Tashkent</p>
+                    <p class="footer__logo">
+                        Mercedes-Benz
+                    </p>
+
+                    <p class="footer__address">
+                        Star Motors, 108 Amir Temur Avenue, Tashkent
+                    </p>
                 </div>
 
                 <div class="footer__cols">
+
                     <div class="footer__col">
                         <p class="footer__heading">Pages</p>
                         <a href="./index.html">Home</a>
                         <a href="./cars.html">Model</a>
                     </div>
+
                     <div class="footer__col">
                         <p class="footer__heading">Buy</p>
                         <a href="./configurator.html">Configurator</a>
                         <a href="./contacts.html">Test drive</a>
                     </div>
+
                     <div class="footer__col">
                         <p class="footer__heading">Contact</p>
-                        <a href="tel:+998712000000">+998 71 200 00 00</a>
-                        <a href="mailto:info@starmotors.uz">info@starmotors.uz</a>
+                        <a href="tel:+998712000000">
+                            +998 71 200 00 00
+                        </a>
+
+                        <a href="mailto:info@starmotors.uz">
+                            info@starmotors.uz
+                        </a>
                     </div>
+
                 </div>
             </div>
 
-            <p class="footer__copy">© <span id="year">2026</span> Star Motors. Practice layout — not an official site.</p>
+            <p class="footer__copy">
+                © <span id="year">2026</span> Star Motors.
+                Practice layout — not an official site.
+            </p>
+
         </div>
     </footer>
 
     <script src="./js/index.js"></script>
+
 </body>
 </html>
