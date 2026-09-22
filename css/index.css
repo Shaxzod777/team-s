@@ -185,23 +185,23 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
-    border: 1px solid #4a4b4f;
-    border-radius: 50%;
-    font-size: 8px;
-    color: var(--text-muted);
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
     transition:
-        border-color 0.25s ease,
-        color 0.25s ease,
+        opacity 0.25s ease,
         transform 0.25s ease;
 }
 
+.logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .logo:hover {
-    border-color: var(--text);
-    color: var(--text);
-    transform: rotate(5deg);
+    opacity: 0.85;
+    transform: rotate(-15deg);
 }
 
 .nav {
